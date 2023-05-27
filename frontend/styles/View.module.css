@@ -1,0 +1,62 @@
+.main {
+    background-color: rgb(130, 87, 35);
+    min-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: "Courier New", Courier, monospace;
+
+    background-image: url("https://wallpaperaccess.com/full/3196089.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.header {
+    height: 100%;
+    background-color: rgb(26, 27, 28);
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    /* border-bottom: 1px solid white; */
+    /* position: relative; */
+}
+
+.Headerbutton {
+    border-radius: 5px;
+    /* border: none; */
+    background-color: rgb(26, 27, 28);
+    color: rgb(204, 188, 127);
+    margin: 1%;
+    padding: 10px;
+    width: 100px;
+    font-size: 12px;
+    cursor: pointer;
+    border-color: #a9840b;
+
+}
+
+.footer {
+    background-color: black;
+    height: 75px;
+    color: #a9840b;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    border-top: 1px solid white;
+    align-items: center;
+}
+
+.radiobox {
+    border-radius: 500px;
+    display: block;
+    margin-left: 30px;
+    margin-right: auto;
+}
+
+.title {
+    font-size: 40px;
+    color: #000000;
+}

@@ -37,7 +37,7 @@ async function main() {
 
   const DAOContract = await ethers.getContractFactory("DAO");
   const daocontract = await DAOContract.deploy(gdtokencontract.address, {
-    value: ethers.utils.parseEther("0.10"),
+    value: ethers.utils.parseEther("0.001"),
   });
   await daocontract.deployed();
 

@@ -27,7 +27,7 @@ function Home() {
   // set the owner
   const [owner, setIsOwner] = useState(false);
   //
-  const [proposalId, setProposalId] = useState("");
+  // const [proposalId, setProposalId] = useState("");
   // hold the no of proposals:
   const [noOfProposals, setNoOfProposals] = useState("0");
   //
@@ -46,7 +46,7 @@ function Home() {
     const web3Provider = new providers.Web3Provider(provider);
 
     const { chainId } = await web3Provider.getNetwork();
-    if (chainId != 11155111) {
+    if (chainId !== 11155111) {
       window.alert("Please change network to Sepolia!!!");
       throw new Error("Change network to sepolia");
     }
@@ -144,11 +144,9 @@ function Home() {
   async function getTokenBalance() {
     try {
       const signer = await getProviderOrSigner(true);
-      const daoContract = getDaoContractInstance(signer);
-      const noOfProposals = await daoContract.obj.balanceOf(
-        signer.getAddress()
-      );
-      setTokenBalance(noOfProposals.toString());
+      const GDContract = getGDTokenContractInstance(signer);
+      const noOfTokens = await GDContract.balanceOf(signer.getAddress());
+      setTokenBalance(parseInt(noOfTokens.toString()));
     } catch (err) {
       console.error(err);
     }
@@ -167,6 +165,7 @@ function Home() {
       setLoading(false);
     } catch (err) {
       console.error(err);
+      window.alert(err.reason);
     }
   }
 
@@ -177,9 +176,9 @@ function Home() {
       const proposal = await daoContract.proposals(id);
 
       const parsedProposal = {
-        id: proposal.id,
+        id: id,
         title: proposal.title.toString(),
-        desciption: proposal.desciption.toString(),
+        description: proposal.description.toString(),
         deadline: new Date(parseInt(proposal.deadline.toString()) * 1000),
         yesVotes: proposal.yesVotes.toString(),
         noVotes: proposal.noVotes.toString(),
@@ -243,6 +242,7 @@ function Home() {
       await getDaoTreasuryBalance();
     } catch (err) {
       console.error(err);
+      window.alert(err.reason);
     }
   }
 
@@ -306,7 +306,7 @@ function Home() {
           <label>Enter Description: </label>
           <input
             className={styles.input}
-            placeholder="Title"
+            placeholder="description"
             type="string"
             onChange={(e) => setDescription(e.target.value)}
           />
@@ -337,7 +337,7 @@ function Home() {
         <div>
           {proposals.map((p, index) => (
             <div key={index} className={styles.proposalCard}>
-              <p>Proposal ID: {p.proposalId}</p>
+              <p>Proposal ID: {p.id.toString()}</p>
               <p>Title: {p.title}</p>
               <p>Description: {p.description}</p>
               <p>Deadline: {p.deadline.toLocaleString()}</p>
@@ -348,13 +348,13 @@ function Home() {
                 <div className={styles.flex}>
                   <button
                     className={styles.button2}
-                    onClick={() => voteOnProposal(p.proposalId, "YES")}
+                    onClick={() => voteOnProposal(p.id, "YES")}
                   >
                     Vote YES
                   </button>
                   <button
                     className={styles.button2}
-                    onClick={() => voteOnProposal(p.proposalId, "NO")}
+                    onClick={() => voteOnProposal(p.id, "NO")}
                   >
                     Vote NO
                   </button>
@@ -363,9 +363,9 @@ function Home() {
                 <div className={styles.flex}>
                   <button
                     className={styles.button2}
-                    onClick={() => executeProposal(p.proposalId)}
+                    onClick={() => executeProposal(p.id)}
                   >
-                    Execute Proposal {p.YesVotes > p.NoVotes ? "(YES)" : "(NO)"}
+                    Execute Proposal {p.yesVotes > p.noVotes ? "(YES)" : "(NO)"}
                   </button>
                 </div>
               ) : (
@@ -387,12 +387,21 @@ function Home() {
         <meta name="description" content="CryptoDevs DAO" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      {/* Adding a ROUTER  */}
-      {/* <header>
-        <Link href="/help">
-          <button className={styles.button}>HELP</button>
-        </Link>
-      </header> */}
+      <header>
+        <div className={styles.header}>
+          <button className={styles.radiobox}>.</button>
+
+          <Link href="/">
+            <button className={styles.HeaderButton}>HOME</button>
+          </Link>
+          <Link href="/view">
+            <button className={styles.HeaderButton}>VIEW</button>
+          </Link>
+          <Link href="/joinUs">
+            <button className={styles.HeaderButton}>JOIN US</button>
+          </Link>
+        </div>
+      </header>
       <div className={styles.main}>
         <div>
           <h1 className={styles.title}>Welcome to Noire 3.0</h1>
@@ -434,8 +443,8 @@ function Home() {
             ""
           )}
         </div>
-        <div>
-          <img className={styles.image} src="/dao-2.webp" />
+        <div className={styles.imgDiv}>
+          <img className={styles.image} src="/0.svg" />
         </div>
       </div>
       <footer className={styles.footer}>Made with &#10084; by Noire</footer>

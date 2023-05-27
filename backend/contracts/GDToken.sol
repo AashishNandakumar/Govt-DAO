@@ -6,7 +6,7 @@ import "@openzeppelin/contracts/access/Ownable.sol";
 
 contract GDToken is ERC721Enumerable, Ownable {
     // setting the max supply of the GD Tokens:
-    uint256 public constant maxSupply = 100000;
+    uint256 public maxSupply = 100000;
     // setting the const of Token
     uint256 public costPerUnit = 0.00001 ether;
 
@@ -15,18 +15,25 @@ contract GDToken is ERC721Enumerable, Ownable {
 
     constructor() ERC721("Govt-DAO token", "GD") {}
 
-    function mintTokens(uint256 noOfTokens) public payable {
-        uint256 requiredAmount = noOfTokens * costPerUnit;
-        require(
-            msg.value >= requiredAmount,
-            "Less than required Amount to purchase tokens"
-        );
-        require(
-            (totalSupply() + noOfTokens) <= maxSupply,
-            "Already minted maximum tokens!!!"
-        );
-        // function of ERC20
-        _safeMint(msg.sender, noOfTokens);
+    // function mintTokens(uint256 noOfTokens) public payable {
+    //     uint256 requiredAmount = noOfTokens * costPerUnit;
+    //     require(
+    //         msg.value >= requiredAmount,
+    //         "Less than required Amount to purchase tokens"
+    //     );
+    //     require(
+    //         (totalSupply() + noOfTokens) <= maxSupply,
+    //         "Already minted maximum tokens!!!"
+    //     );
+    //     // function of ERC721
+    //     _safeMint(msg.sender, noOfTokens);
+    // }
+
+    function mint() public payable {
+        require(tokenIds < maxSupply, "Exceeded max crypto devs supply");
+        require(msg.value >= costPerUnit, "Ether sent is not correct");
+        tokenIds += 1;
+        _safeMint(msg.sender, tokenIds);
     }
 
     // Withdraw all the ether in the contract:

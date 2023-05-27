@@ -1,7 +1,7 @@
 export const GOVT_DAO_CONTRACT_ADDRESS =
-  "0xa19719Ba11D3349440ef0408Bf8138c3C8177A9d";
+  "0x1a82251df1b231054DF1dD4aBA2187A2C3521De2";
 
-export const GD_TOKEN_ADDRESS = "0x682f64E5eb846189a395cC062f483239955E544E";
+export const GD_TOKEN_ADDRESS = "0xeeeCde56fd84de63A834cc1C093c131244cEf0a0";
 
 export const GD_TOKEN_ABI = [
   {
@@ -214,14 +214,8 @@ export const GD_TOKEN_ABI = [
     type: "function",
   },
   {
-    inputs: [
-      {
-        internalType: "uint256",
-        name: "noOfTokens",
-        type: "uint256",
-      },
-    ],
-    name: "mintTokens",
+    inputs: [],
+    name: "mint",
     outputs: [],
     stateMutability: "payable",
     type: "function",

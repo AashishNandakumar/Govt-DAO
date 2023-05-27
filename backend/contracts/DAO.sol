@@ -123,8 +123,9 @@ contract DAO is Ownable {
         Proposal storage proposal = proposals[proposalIndex];
 
         if (proposal.yesVotes > proposal.noVotes) {
-            proposal.executed = true;
+            // !
         }
+        proposal.executed = true;
     }
 
     // withdraw ETH from DAO
