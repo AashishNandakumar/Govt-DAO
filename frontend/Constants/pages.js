@@ -1,7 +1,9 @@
 export const GOVT_DAO_CONTRACT_ADDRESS =
-  "0x4E1597c5932a7801ae5249E370dccb5947F88637";
+  "0xa19719Ba11D3349440ef0408Bf8138c3C8177A9d";
 
-export const GOVT_DAO_CONTRACT_ABI = [
+export const GD_TOKEN_ADDRESS = "0x682f64E5eb846189a395cC062f483239955E544E";
+
+export const GD_TOKEN_ABI = [
   {
     inputs: [],
     stateMutability: "nonpayable",
@@ -504,6 +506,204 @@ export const GOVT_DAO_CONTRACT_ABI = [
   {
     inputs: [],
     name: "wihdrawByOwner",
+    outputs: [],
+    stateMutability: "nonpayable",
+    type: "function",
+  },
+  {
+    stateMutability: "payable",
+    type: "receive",
+  },
+];
+
+export const GOVT_DAO_CONTRACT_ABI = [
+  {
+    inputs: [
+      {
+        internalType: "address",
+        name: "_GDTokenAddress",
+        type: "address",
+      },
+    ],
+    stateMutability: "payable",
+    type: "constructor",
+  },
+  {
+    anonymous: false,
+    inputs: [
+      {
+        indexed: true,
+        internalType: "address",
+        name: "previousOwner",
+        type: "address",
+      },
+      {
+        indexed: true,
+        internalType: "address",
+        name: "newOwner",
+        type: "address",
+      },
+    ],
+    name: "OwnershipTransferred",
+    type: "event",
+  },
+  {
+    stateMutability: "payable",
+    type: "fallback",
+  },
+  {
+    inputs: [
+      {
+        internalType: "string",
+        name: "_title",
+        type: "string",
+      },
+      {
+        internalType: "string",
+        name: "_description",
+        type: "string",
+      },
+    ],
+    name: "createProposal",
+    outputs: [
+      {
+        internalType: "uint256",
+        name: "",
+        type: "uint256",
+      },
+    ],
+    stateMutability: "nonpayable",
+    type: "function",
+  },
+  {
+    inputs: [
+      {
+        internalType: "uint256",
+        name: "proposalIndex",
+        type: "uint256",
+      },
+    ],
+    name: "executeProposal",
+    outputs: [],
+    stateMutability: "nonpayable",
+    type: "function",
+  },
+  {
+    inputs: [],
+    name: "numProposals",
+    outputs: [
+      {
+        internalType: "uint256",
+        name: "",
+        type: "uint256",
+      },
+    ],
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    inputs: [],
+    name: "owner",
+    outputs: [
+      {
+        internalType: "address",
+        name: "",
+        type: "address",
+      },
+    ],
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    inputs: [
+      {
+        internalType: "uint256",
+        name: "",
+        type: "uint256",
+      },
+    ],
+    name: "proposals",
+    outputs: [
+      {
+        internalType: "uint256",
+        name: "id",
+        type: "uint256",
+      },
+      {
+        internalType: "string",
+        name: "title",
+        type: "string",
+      },
+      {
+        internalType: "string",
+        name: "description",
+        type: "string",
+      },
+      {
+        internalType: "uint256",
+        name: "yesVotes",
+        type: "uint256",
+      },
+      {
+        internalType: "uint256",
+        name: "noVotes",
+        type: "uint256",
+      },
+      {
+        internalType: "bool",
+        name: "executed",
+        type: "bool",
+      },
+      {
+        internalType: "uint256",
+        name: "deadline",
+        type: "uint256",
+      },
+    ],
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    inputs: [],
+    name: "renounceOwnership",
+    outputs: [],
+    stateMutability: "nonpayable",
+    type: "function",
+  },
+  {
+    inputs: [
+      {
+        internalType: "address",
+        name: "newOwner",
+        type: "address",
+      },
+    ],
+    name: "transferOwnership",
+    outputs: [],
+    stateMutability: "nonpayable",
+    type: "function",
+  },
+  {
+    inputs: [
+      {
+        internalType: "uint256",
+        name: "proposalIndex",
+        type: "uint256",
+      },
+      {
+        internalType: "enum DAO.Vote",
+        name: "vote",
+        type: "uint8",
+      },
+    ],
+    name: "voteOnProposal",
+    outputs: [],
+    stateMutability: "nonpayable",
+    type: "function",
+  },
+  {
+    inputs: [],
+    name: "withdrawETHFromDAO",
     outputs: [],
     stateMutability: "nonpayable",
     type: "function",

@@ -22,7 +22,6 @@ contract DAO is Ownable {
     struct Proposal {
         uint256 id;
         // ! warning heavy gas
-        uint256 tokenId;
         string title;
         string description;
         // !
@@ -49,14 +48,16 @@ contract DAO is Ownable {
 
     // Create proposals
     function createProposal(
-        uint256 _tokenId
+        string memory _title,
+        string memory _description
     ) external onlyTokenHolders returns (uint256) {
         Proposal storage proposal = proposals[numProposals];
         proposal.id = numProposals;
+        proposal.title = _title;
+        proposal.description = _description;
         numProposals++;
         // set the deadline
         proposal.deadline = block.timestamp + 10 minutes;
-        proposal.tokenId = _tokenId;
         return numProposals - 1;
     }
 
