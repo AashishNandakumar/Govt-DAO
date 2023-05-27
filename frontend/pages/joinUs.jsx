@@ -52,6 +52,7 @@ function JoinUs() {
       setLoading2(true);
       await tx.wait();
       setLoading2(false);
+      window.alert("Tokens Minted!!, plese proceed back to HOME");
     } catch (err) {
       console.error(err);
     }
@@ -75,6 +76,8 @@ function JoinUs() {
       connectWallet();
     }
   }, [walletConnected2]);
+
+  // useEffect(() => {}, [loading2]);
   return (
     <div>
       <Head>
