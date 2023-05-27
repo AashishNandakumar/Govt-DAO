@@ -14,7 +14,7 @@ import { formatEther } from "ethers/lib/utils";
 import { providers, Contract, ethers, utils } from "ethers";
 import Home from "./index.jsx";
 // import React from "react";
-import styled from "styled-components";
+// import styled from "styled-components";
 
 function ViewField() {
   const [username, setUsername] = useState("");
