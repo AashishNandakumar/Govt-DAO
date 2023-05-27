@@ -29,6 +29,19 @@ ex : Asssume you have a string and a number to pass
 
 async function main() {
   // Write your deployment files here
+  const GDTokenContract = await ethers.getContractFactory("GDToken");
+  const gdtokencontract = await GDTokenContract.deploy();
+  await gdtokencontract.deployed();
+
+  console.log("GDToken contract address:", gdtokencontract.address);
+
+  const DAOContract = await ethers.getContractFactory("DAO");
+  const daocontract = await DAOContract.deploy(gdtokencontract.address, {
+    value: ethers.utils.parseEther("0.10"),
+  });
+  await daocontract.deployed();
+
+  console.log("DAO contract address: ", daocontract.address);
 }
 
 // Async Sleep function

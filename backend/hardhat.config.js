@@ -1,6 +1,8 @@
 require("@nomicfoundation/hardhat-toolbox");
 require("dotenv").config();
 
+const URL = process.env.QUICKNODE_HTTP_URL;
+const pk = process.env.PRIVATE_KEY;
 //* Default Template for Reference
 /*
 module.exports = {
@@ -29,4 +31,11 @@ module.exports = {
 */
 module.exports = {
   solidity: "0.8.9",
+  defaultNetwork: "sepolia",
+  networks: {
+    sepolia: {
+      url: URL,
+      accounts: [pk],
+    },
+  },
 };
