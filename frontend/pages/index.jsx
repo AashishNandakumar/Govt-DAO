@@ -389,16 +389,23 @@ function Home() {
       </Head>
       <header>
         <div className={styles.header}>
-          <button className={styles.radiobox}>.</button>
+          <button
+            className={`${styles.radiobox} ${
+              walletConnected ? styles.green : ""
+            }`}
+          >
+            .
+          </button>
 
           <Link href="/">
             <button className={styles.HeaderButton}>HOME</button>
           </Link>
-          <Link href="/view">
-            <button className={styles.HeaderButton}>VIEW</button>
-          </Link>
+
           <Link href="/joinUs">
             <button className={styles.HeaderButton}>JOIN US</button>
+          </Link>
+          <Link href="/view">
+            <button className={styles.HeaderButton}>CONTACT US</button>
           </Link>
         </div>
       </header>
@@ -420,6 +427,7 @@ function Home() {
             >
               Create Proposal
             </button>
+
             <button
               className={styles.button}
               onClick={() => setSelectedTab("View Proposals")}

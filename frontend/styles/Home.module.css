@@ -72,7 +72,7 @@
 }
 
 .title {
-    font-size: 2rem;
+    font-size: 40px;
     margin: 2rem 0;
 }
 
@@ -139,11 +139,11 @@
 
 .proposalCard {
     width: fit-content;
-    margin-top: 0.30rem;
+    margin-top: 1rem;
     border: black 2px solid;
     flex: 1;
     /* flex-direction: column; */
-    margin-bottom: 0.50rem;
+    margin-bottom: 1rem;
     padding: 15px;
     background-color: burlywood;
     color: black;
@@ -183,6 +183,7 @@
     font-size: 12px;
     cursor: pointer;
     border-color: #a9840b;
+    width: 120px;
 }
 
 .radiobox {
@@ -190,6 +191,14 @@
     display: block;
     margin-left: 30px;
     margin-right: auto;
+}
+
+.green {
+    border-radius: 500px;
+    display: block;
+    margin-left: 30px;
+    margin-right: auto;
+    background-color: rgb(23, 119, 85);
 }
 
 /* media query */

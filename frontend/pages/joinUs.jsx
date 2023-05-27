@@ -85,16 +85,16 @@ function JoinUs() {
       </Head>
       <header>
         <div className={styles.header}>
-          <button className={styles.radiobox}>.</button>
+          {/* <button className={styles.radiobox}>.</button> */}
           {/* <p className={styles.radioboxDesc}>Connected</p> */}
           <Link href="/">
             <button className={styles.Headerbutton}>HOME</button>
           </Link>
-          <Link href="/view">
-            <button className={styles.Headerbutton}>VIEW</button>
-          </Link>
           <Link href="/joinUs">
             <button className={styles.Headerbutton}>JOIN US</button>
+          </Link>
+          <Link href="/view">
+            <button className={styles.Headerbutton}>CONTACT US</button>
           </Link>
         </div>
       </header>

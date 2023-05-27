@@ -12,8 +12,21 @@ import {
 } from "../Constants/pages";
 import { formatEther } from "ethers/lib/utils";
 import { providers, Contract, ethers, utils } from "ethers";
+import Home from "./index.jsx";
+// import React from "react";
+import styled from "styled-components";
 
 function ViewField() {
+  const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // Perform form submission logic here
+  };
+
   return (
     <div>
       <Head>
@@ -23,7 +36,7 @@ function ViewField() {
       </Head>
       <header>
         <div className={styles.header}>
-          <button className={styles.radiobox}>.</button>
+          {/* <button className={styles.radiobox}>.</button> */}
 
           <Link href="/">
             <button className={styles.Headerbutton}>HOME</button>
@@ -32,14 +45,57 @@ function ViewField() {
             <button className={styles.Headerbutton}>JOIN US</button>
           </Link>
           <Link href="/view">
-            <button className={styles.Headerbutton}>VIEW</button>
+            <button className={styles.Headerbutton}>CONTACT US</button>
           </Link>
         </div>
       </header>
       <div className={styles.main}>
-        <div className={styles.contents}>
-          <h1 className={styles.title}>View our recent proposals</h1>
+        <div>
+          <h1 className={styles.title}>Get in touch with us!</h1>
         </div>
+        <container>
+          <form onSubmit={handleSubmit} className={styles.contents}>
+            <label className={styles.labeling}>Username:</label>
+            <input
+              className={styles.inputs}
+              type="text"
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
+              required
+            />
+
+            <label className={styles.labeling}>Email:</label>
+            <input
+              className={styles.inputs}
+              type="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
+            />
+
+            <label className={styles.labeling}>Password:</label>
+            <input
+              className={styles.inputs}
+              type="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              required
+            />
+
+            <label className={styles.labeling}>Confirm Password:</label>
+            <input
+              className={styles.inputs}
+              type="password"
+              value={password}
+              onChange={(e) => setConfirmPassword(e.target.value)}
+              required
+            />
+
+            <button type="submit" className={styles.submitButton}>
+              Register
+            </button>
+          </form>
+        </container>
       </div>
 
       <footer className={styles.footer}>Made with &#10084; by Noire</footer>

@@ -7,7 +7,7 @@
     align-items: center;
     font-family: "Courier New", Courier, monospace;
 
-    background-image: url("https://wallpaperaccess.com/full/3196089.jpg");
+    background-image: url("https://images.unsplash.com/photo-1508615039623-a25605d2b022?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80");
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
@@ -39,6 +39,7 @@
     font-size: 12px;
     cursor: pointer;
     border-color: #a9840b;
+    width: 120px;
 
 }
 
@@ -48,11 +49,19 @@
     width: 200px;
     border-radius: 5px;
     /* border: none; */
-    background-color: #a9840b;
+    background-color: #159433;
     cursor: pointer;
     border-color: #000000;
     margin-bottom: 2%;
 
+}
+
+.green {
+    border-radius: 500px;
+    display: block;
+    margin-left: 30px;
+    margin-right: auto;
+    background-color: rgb(11, 66, 47);
 }
 
 .footer {
