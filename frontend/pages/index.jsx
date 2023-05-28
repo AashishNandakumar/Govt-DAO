@@ -334,7 +334,7 @@ function Home() {
       );
     } else {
       return (
-        <div>
+        <div className={styles.Cards}>
           {proposals.map((p, index) => (
             <div key={index} className={styles.proposalCard}>
               <p>Proposal ID: {p.id.toString()}</p>
@@ -410,15 +410,17 @@ function Home() {
         </div>
       </header>
       <div className={styles.main}>
-        <div>
-          <h1 className={styles.title}>Welcome to Noire 3.0</h1>
-          <div className={styles.description}>Welcome to the future</div>
-          <div className={styles.description}>
-            Your GD Token Balance: <b>{tokenBalance}</b>
-            <br />
-            Treasury Balance: <b>{formatEther(daoTreasury)} ETH</b>
-            <br />
-            Total Number of Proposals: <b>{noOfProposals}</b>
+        <div className={styles.middleMain}>
+          <div className={styles.innerMain}>
+            <h1 className={styles.title}>Welcome to Noire 3.0</h1>
+            <div className={styles.description}>Welcome to the future</div>
+            <div className={styles.description}>
+              Your GD Token Balance: <b>{tokenBalance}</b>
+              <br />
+              Treasury Balance: <b>{formatEther(daoTreasury)} ETH</b>
+              <br />
+              Total Number of Proposals: <b>{noOfProposals}</b>
+            </div>
           </div>
           <div className={styles.flex}>
             <button
@@ -452,7 +454,7 @@ function Home() {
           )}
         </div>
         <div className={styles.imgDiv}>
-          <img className={styles.image} src="/0.svg" />
+          {/* <img className={styles.image} src="/0.svg" /> */}
         </div>
       </div>
       <footer className={styles.footer}>Made with &#10084; by Noire</footer>
