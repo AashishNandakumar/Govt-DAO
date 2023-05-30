@@ -16,12 +16,15 @@
     align-items: center;
     height: 100%; */
 
-    height: 100%;
+    height: 120%;
     background-color: rgb(26, 27, 28);
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
     align-items: center;
+    /* border-radius: white; */
+
+    border-bottom: 1px solid #ffffff;
 }
 
 .footer {
@@ -34,7 +37,7 @@
     color: #ffffff;
     height: 100%; */
     background-color: black;
-    height: 75px;
+    height: 10rem;
     color: #a9840b;
     display: flex;
     flex-direction: row;
@@ -55,6 +58,7 @@
 .title {
     font-size: 60px;
     margin: 2rem 0;
+    color: rgb(181, 216, 219);
 }
 
 .description {
@@ -62,7 +66,24 @@
     margin: 4rem 0;
     font-size: 30px;
     color: rgb(53, 231, 244);
+    font-weight: 550;
 }
+
+.innerFooter {
+    /* color: #ffffff; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #a9840b;
+
+
+
+}
+
+/* .footerText1 {
+    padding: 2%;
+} */
 
 .button {
     border-radius: 5px;
@@ -160,6 +181,8 @@
 
 }
 
+.Top {}
+
 .flex {
     flex: 1;
     /* justify-content: space-between; */
@@ -180,12 +203,12 @@
     font-size: 12px;
     cursor: crosshair; */
     border-radius: 5px;
-    /* border: none; */
+    border: none;
     background-color: rgb(26, 27, 28);
-    color: rgb(204, 188, 127);
-    margin: 1%;
+    color: #a9840b;
+    margin: 0.5%;
     padding: 10px;
-    width: 100px;
+    /* width: 60px; */
     font-size: 12px;
     cursor: pointer;
     border-color: #a9840b;
@@ -254,4 +277,8 @@
     /* DEMo */
 
 
+}
+
+.innerValue {
+    color: rgb(78, 241, 89);
 }

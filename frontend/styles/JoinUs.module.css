@@ -11,7 +11,7 @@
 
     /* background-image: url("https://wallpaperaccess.com/full/1267675.jpg"); */
     /* background-image: "./public/JS.jpg"; */
-    background-image: url("https://images.unsplash.com/photo-1642104704074-907c0698cbd9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1332&q=80");
+    background-image: url("https://wallpaperaccess.com/full/3648425.jpg");
 
 
     background-repeat: no-repeat;
@@ -23,6 +23,9 @@
 
 }
 
+.Top {
+    margin: -1%;
+}
 
 .header {
     height: 100%;
@@ -33,16 +36,18 @@
     align-items: center;
     /* border-bottom: 1px solid white; */
     /* position: relative; */
+    border-bottom: 1px solid #ffffff;
+
 }
 
 .Headerbutton {
     border-radius: 5px;
-    /* border: none; */
+    border: none;
     background-color: rgb(26, 27, 28);
-    color: rgb(204, 188, 127);
-    margin: 1%;
+    color: #a9840b;
+    margin: 0.5%;
     padding: 10px;
-    width: 100px;
+    /* width: 60px; */
     font-size: 12px;
     cursor: pointer;
     border-color: #a9840b;
@@ -56,11 +61,25 @@
     width: 200px;
     border-radius: 5px;
     /* border: none; */
-    background-color: #0d607e;
+    background-color: #022f4a;
     cursor: pointer;
-    border-color: #000000;
+    border-color: #9c900c;
     margin-bottom: 2%;
     padding: 20px;
+    color: #ffffff;
+
+
+}
+
+.innerFooter {
+    /* color: #ffffff; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #a9840b;
+
+
 
 }
 
@@ -74,7 +93,7 @@
 
 .footer {
     background-color: black;
-    height: 75px;
+    height: 10rem;
     color: #a9840b;
     display: flex;
     flex-direction: row;
@@ -89,10 +108,14 @@
     padding: 15px;
     margin: 2%;
     line-height: 2.5;
+    /* border-color: aquamarine; */
+    /* background-color: aqua; */
+    /* padding: 180px; */
+    padding: 0 25rem;
 }
 
 .endingPhrase {
-    color: #850a0a;
+    color: #3de23d;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -118,9 +141,21 @@
 
 .title {
     font-size: 60px;
-    color: #195b27;
+    color: #c4dc39;
+    text-decoration-line: underline;
+
+    /* background-color: #c4dc39; */
 }
 
 .innerContents {
     font-size: 20px;
+    color: #ffffff;
+    line-height: 3.5rem;
+    border-left: #fc5a5a;
+
+}
+
+.innerValue {
+    color: #d39126;
+    font-style: italic;
 }

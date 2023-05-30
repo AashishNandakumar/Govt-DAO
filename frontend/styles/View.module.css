@@ -7,7 +7,7 @@
     align-items: center;
     font-family: "Courier New", Courier, monospace;
 
-    background-image: url("https://images.unsplash.com/photo-1497864149936-d3163f0c0f4b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1169&q=80");
+    background-image: url("https://wallpaperaccess.com/full/1267580.jpg");
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
@@ -22,26 +22,29 @@
     align-items: center;
     /* border-bottom: 1px solid white; */
     /* position: relative; */
+    border-bottom: 1px solid #ffffff;
+
 }
 
 .Headerbutton {
     border-radius: 5px;
-    /* border: none; */
+    border: none;
     background-color: rgb(26, 27, 28);
-    color: rgb(204, 188, 127);
-    margin: 1%;
+    color: #a9840b;
+    margin: 0.5%;
     padding: 10px;
-    width: 100px;
+    /* width: 60px; */
     font-size: 12px;
     cursor: pointer;
     border-color: #a9840b;
     width: 120px;
 
+
 }
 
 .footer {
     background-color: black;
-    height: 75px;
+    height: 10rem;
     color: #a9840b;
     display: flex;
     flex-direction: row;
@@ -80,11 +83,24 @@
 .submitButton {
     margin: 10%;
     background-color: #3c6c15;
-    border-radius: 3px;
+    border-radius: 10px;
     padding: 10px;
-    width: 100px;
+    width: 120px;
     cursor: pointer;
     color: aliceblue;
+    margin-top: 15%;
+}
+
+.innerFooter {
+    /* color: #ffffff; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #a9840b;
+
+
+
 }
 
 .inputs {
@@ -101,4 +117,11 @@
     margin-left: 30px;
     margin-right: auto;
     background-color: rgb(11, 66, 47);
+}
+
+.endingPhrase {
+    color: #ffffff;
+    font-size: 25px;
+    font-weight: 1000;
+    margin-bottom: 2%;
 }

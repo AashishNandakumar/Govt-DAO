@@ -381,7 +381,7 @@ function Home() {
   }
 
   return (
-    <div>
+    <div className={styles.Top}>
       <Head>
         <title>Noire DAO</title>
         <meta name="description" content="CryptoDevs DAO" />
@@ -415,11 +415,16 @@ function Home() {
             <h1 className={styles.title}>Welcome to Noire 3.0</h1>
             <div className={styles.description}>Welcome to the future</div>
             <div className={styles.description}>
-              Your GD Token Balance: <b>{tokenBalance}</b>
+              Your GD Token Balance:{" "}
+              <b className={styles.innerValue}>{tokenBalance}</b>
               <br />
-              Treasury Balance: <b>{formatEther(daoTreasury)} ETH</b>
+              Treasury Balance:{" "}
+              <b className={styles.innerValue}>
+                {formatEther(daoTreasury)} ETH
+              </b>
               <br />
-              Total Number of Proposals: <b>{noOfProposals}</b>
+              Total Number of Proposals:{" "}
+              <b className={styles.innerValue}>{noOfProposals}</b>
             </div>
           </div>
           <div className={styles.flex}>
@@ -457,7 +462,17 @@ function Home() {
           {/* <img className={styles.image} src="/0.svg" /> */}
         </div>
       </div>
-      <footer className={styles.footer}>Made with &#10084; by Noire</footer>
+      <footer className={styles.footer}>
+        <div className={styles.innerFooter}>
+          {/* <h2 className={styles.footerText1}>NOIRE</h2> */}
+          <h3 className={styles.footerText1}>
+            Copyright &copy; 2023 Noire, Inc.
+          </h3>
+          <h4 className={styles.footerText1}>
+            Legal Stuff | Privacy Policy | Security | Website Accessibility
+          </h4>
+        </div>
+      </footer>
     </div>
   );
 }

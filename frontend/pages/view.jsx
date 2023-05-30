@@ -96,9 +96,22 @@ function ViewField() {
             </button>
           </form>
         </container>
+        <div className={styles.endingPhrase}>
+          Register, and we will mail you a confirmation link!
+        </div>
       </div>
 
-      <footer className={styles.footer}>Made with &#10084; by Noire</footer>
+      <footer className={styles.footer}>
+        <div className={styles.innerFooter}>
+          {/* <h2 className={styles.footerText1}>NOIRE</h2> */}
+          <h3 className={styles.footerText1}>
+            Copyright &copy; 2023 Noire, Inc.
+          </h3>
+          <h4 className={styles.footerText1}>
+            Legal Stuff | Privacy Policy | Security | Website Accessibility
+          </h4>
+        </div>
+      </footer>
     </div>
   );
 }

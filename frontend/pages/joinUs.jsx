@@ -79,7 +79,7 @@ function JoinUs() {
 
   // useEffect(() => {}, [loading2]);
   return (
-    <div>
+    <div className={styles.Top}>
       <Head>
         <title>Noire 3.0 </title>
         {/* Fill later */}
@@ -107,23 +107,26 @@ function JoinUs() {
             <h1 className={styles.title}>Why Join Us?</h1>
             <div className={styles.innerContents}>
               <p>
-                <b>Transparent Decision-Making</b> - Our governance framework
-                ensures transparency in the decision-making process.{" "}
+                <b className={styles.innerValue}>Transparent Decision-Making</b>{" "}
+                - Our governance framework ensures transparency in the
+                decision-making process.{" "}
               </p>
               <p>
-                <b>Equal Participation</b> - We believe in the power of every
-                token holder's voice. Our governance framework ensures that all
-                token holders have an equal opportunity to participate in the
-                decision-making process.
+                <b className={styles.innerValue}>Equal Participation</b> - We
+                believe in the power of every token holder's voice. Our
+                governance framework ensures that all token holders have an
+                equal opportunity to participate in the decision-making process.
               </p>
               <p>
-                <b>Community Engagement</b> - Joining us means becoming a part
-                of a vibrant and engaged community.{" "}
+                <b className={styles.innerValue}>Community Engagement</b> -
+                Joining us means becoming a part of a vibrant and engaged
+                community.{" "}
               </p>
               <p>
-                <b>Impactful Decisions</b> - Your participation in our
-                governance mechanisms allows you to directly contribute to
-                important decisions that impact the organization.
+                <b className={styles.innerValue}>Impactful Decisions</b> - Your
+                participation in our governance mechanisms allows you to
+                directly contribute to important decisions that impact the
+                organization.
               </p>
             </div>
             <div className={styles.endingPhrase}>
@@ -137,7 +140,19 @@ function JoinUs() {
           {/* <button className={styles.Bodybutton}>Already a Member</button> */}
         </div>
       </div>
-      <footer className={styles.footer}>Made with &#10084; by NOIRE 3.0</footer>
+      <footer className={styles.footer}>
+        <footer className={styles.footer}>
+          <div className={styles.innerFooter}>
+            {/* <h2 className={styles.footerText1}>NOIRE</h2> */}
+            <h3 className={styles.footerText1}>
+              Copyright &copy; 2023 Noire, Inc.
+            </h3>
+            <h4 className={styles.footerText1}>
+              Legal Stuff | Privacy Policy | Security | Website Accessibility
+            </h4>
+          </div>
+        </footer>
+      </footer>
     </div>
   );
 }
