@@ -181,7 +181,9 @@
 
 }
 
-.Top {}
+.Top {
+    margin: -0.5%;
+}
 
 .flex {
     flex: 1;

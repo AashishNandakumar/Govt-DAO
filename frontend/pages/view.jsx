@@ -28,7 +28,7 @@ function ViewField() {
   };
 
   return (
-    <div>
+    <div className={styles.Top}>
       <Head>
         <title>Noire DAO</title>
         <meta name="description" content="CryptoDevs DAO" />

@@ -42,6 +42,10 @@
 
 }
 
+.Top {
+    margin: -0.5%;
+}
+
 .footer {
     background-color: black;
     height: 10rem;
