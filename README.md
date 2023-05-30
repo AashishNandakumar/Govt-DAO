@@ -14,4 +14,4 @@ What's in it for you?  You are getting a voice to spread, to let the community k
 > Please follow these steps for a better experience
 1. Please open the link in browsers such as brave, chrome etc (except Opera).
 2. Make sure you have metamask installed.
-3. Please switch to Sepolia Testnet and but some testnet ether (goto Sepolia faucets) to get started.
+3. Please switch to Sepolia Testnet and get some testnet ether (goto Sepolia faucets) to get started.
